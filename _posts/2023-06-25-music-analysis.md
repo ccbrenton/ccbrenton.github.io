@@ -232,7 +232,7 @@ plt.show()
 
 
     
-![png](output_8_0.png)
+![png](/assets/images/output_8_0.png)
     
 
 
@@ -520,7 +520,7 @@ plt.show()
 
 
     
-![png](output_21_0.png)
+![png](/assets/images/output_21_0.png)
     
 
 
@@ -1110,7 +1110,7 @@ plt.show()
 
 
     
-![png](output_31_0.png)
+![png](/assets/images/output_31_0.png)
     
 
 
