@@ -6,6 +6,7 @@ categories:
 tags:
   - Jekyll
   - update
+classes: wide
 ---
 
 
