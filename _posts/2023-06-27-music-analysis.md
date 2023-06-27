@@ -32,14 +32,14 @@ from spotipy.oauth2 import SpotifyOAuth
 
 ```python
 #This sets the environmental variables during this session
-os.environ['SPOTIPY_CLIENT_ID'] = 'f9ac0ad027114dcf97963d2c4d2865d5'
-os.environ['SPOTIPY_CLIENT_SECRET'] = '0b5d91bd79a24f1886eaa7c62a21fc8e'
-os.environ['SPOTIPY_REDIRECT_URI'] = 'https://localhost:8888/callback'
+os.environ['SPOTIPY_CLIENT_ID'] = '###'
+os.environ['SPOTIPY_CLIENT_SECRET'] = '###'
+os.environ['SPOTIPY_REDIRECT_URI'] = '###'
 
 #We create our Spotify object
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='f9ac0ad027114dcf97963d2c4d2865d5',
-                                               client_secret='0b5d91bd79a24f1886eaa7c62a21fc8e',
-                                               redirect_uri='https://localhost:8888/callback',
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='###',
+                                               client_secret='###',
+                                               redirect_uri='###',
                                                scope='user-library-read'))
 ```
 
@@ -908,7 +908,9 @@ What we are looking for with a QQ plot is whether the points closely follow the 
 Chebyshev's inequality (also called Bienaymé–Chebyshev inequality) states that:
 For a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than 1/k2 of the distribution's values can be k or more standard deviations away from the mean.
 
-$$Pr(|X-\mu|\geq k \sigma) \leq \frac{1}{k^2}$$
+```math
+Pr(|X-\mu|\geq k \sigma) \leq \frac{1}{k^2}
+```
 
 In a normal distribution, we could confidently say that 95% of the data would fit within 2 standard deviations from the mean. Using Chebyshev's inequality, we can conclude that 75% of the data will fit within 2 standard deviations of the mean for a wide range of different distributions. Using these bounds does not give us the same level of accuracy we can expect with a normal distribution, but it does allow us to better identify values in our data which would correlate to a song better fitting our playlist.
 
