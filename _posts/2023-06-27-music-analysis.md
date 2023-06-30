@@ -13,7 +13,7 @@ classes: wide
 mathjax: true
 ---
 
-Perfect Party Playlist
+Music is a huge part of my life as I'm sure it is for many others, but sometimes finding new music or picking the perfect song for a new playlist can still be challenging..
 
 
 ```python
