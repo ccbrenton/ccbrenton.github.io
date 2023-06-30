@@ -10,6 +10,7 @@ tags:
   - Pandas
   - NumPy
 classes: wide
+mathjax: true
 ---
 
 Perfect Party Playlist
