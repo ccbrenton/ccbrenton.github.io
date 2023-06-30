@@ -9,17 +9,11 @@ search: false
 @import "minimal-mistakes"; // main partials
 
 // https://github.com/mmistakes/minimal-mistakes/issues/1219#issuecomment-326809412
-html {
-    font-size: 16px; // originally 16px
-    @include breakpoint($medium) {
-        font-size: 18px; // originally 18px
-    }
 
-    @include breakpoint($large) {
-        font-size: 20px; // originally 20px
-    }
-
-    @include breakpoint($x-large) {
-        font-size: 22px; // originally 22px
-    }
+.sectionbody {
+  p,
+  li,
+  dl {
+    font-size: 0.75em;
+  }
 }
