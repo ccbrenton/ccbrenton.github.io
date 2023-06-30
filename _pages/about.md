@@ -10,13 +10,11 @@ As an engineer, data was front and center to my work. Designing anything is an i
 
 <br/>
 
-
 <br/>
 
 ![png](/assets/images/Venn_Diagram.png)
 
 <br/>
-
 
 <br/>
 
