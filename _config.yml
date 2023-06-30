@@ -16,11 +16,9 @@
 title: Christopher Brenton Portfolio
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+      Exploring my world with data analysis
 twitter_username: username
-github_username: username
+github_username: ccbrenton
 minimal_mistakes_skin: dark
 search: true
 
@@ -60,30 +58,21 @@ plugins:
 author:
   name   : "Chris Brenton"
   avatar : "/assets/images/profile-2.png"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Engineer -> Data Analyst. \n\n Exploring my world with a little curiosity, programming, and data viz."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "Instagram"
+    - label: "LinkedIn"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "Instagram"
+    - label: "LinkedIn"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
 
