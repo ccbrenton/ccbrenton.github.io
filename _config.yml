@@ -62,19 +62,19 @@ author:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/ccbrenton"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://instagram.com/"
+      url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/ccbrenton"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://instagram.com/"
+      url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
 
 defaults:
   # _posts
