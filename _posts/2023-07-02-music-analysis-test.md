@@ -49,14 +49,14 @@ from spotipy.oauth2 import SpotifyOAuth
 
 ```python
 #This sets the environmental variables during this session
-os.environ['SPOTIPY_CLIENT_ID'] = 'f9ac0ad027114dcf97963d2c4d2865d5'
-os.environ['SPOTIPY_CLIENT_SECRET'] = '0b5d91bd79a24f1886eaa7c62a21fc8e'
-os.environ['SPOTIPY_REDIRECT_URI'] = 'https://localhost:8888/callback'
+os.environ['SPOTIPY_CLIENT_ID'] = '###'
+os.environ['SPOTIPY_CLIENT_SECRET'] = '###'
+os.environ['SPOTIPY_REDIRECT_URI'] = '###'
 
 #We create our Spotify object
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='f9ac0ad027114dcf97963d2c4d2865d5',
-                                               client_secret='0b5d91bd79a24f1886eaa7c62a21fc8e',
-                                               redirect_uri='https://localhost:8888/callback',
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='###',
+                                               client_secret='###',
+                                               redirect_uri='###',
                                                scope='user-library-read'))
 ```
 
