@@ -1,8 +1,8 @@
 ---
-title: "Music Analysis Test"
-date: 2019-04-18T15:34:30-04:00
+title: "Music Characteristics Analysis with Python"
+date: 2023-07-02
 categories:
-  - blog
+  - Project
 tags:
   - Python
   - Seaborn
@@ -15,8 +15,6 @@ mathjax: true
 #toc_sticky: true
 #toc_label: Table of Contents
 ---
-
-## Introduction
 
 There is something so powerful about music. It can makes us laugh or it can make us cry. It can fill us with energy or it can relax us to sleep. It can remind us of the past or inspire us for the future. There are limitless ways to experience music, and that's what makes it so interesting to me. I've always had a true passion for music (my 80,000+ listening minutes on Spotify can attest to that), but it's not always easy to know if others will share the same liked songs. As the guy who loves creating new playlists (and has a giant speaker I bring everywhere I go), it's usually my job to pick the tunes at gatherings. Music is truly subjective when considering what's "good" or "bad", but I often rely on intuition for picking the right songs. While I *think* I do a decent job, I've always asked myself if there's a better way. What if I could use data to find the right songs? Now I could always rely on the experts to tell me what's popular, but what's the fun in that! Let's explore my music to see what insights we can find. 
 
@@ -67,14 +65,14 @@ from spotipy.oauth2 import SpotifyOAuth
 
 ```python
 #This sets the environmental variables during this session
-os.environ['SPOTIPY_CLIENT_ID'] = 'f9ac0ad027114dcf97963d2c4d2865d5'
-os.environ['SPOTIPY_CLIENT_SECRET'] = '0b5d91bd79a24f1886eaa7c62a21fc8e'
-os.environ['SPOTIPY_REDIRECT_URI'] = 'https://localhost:8888/callback'
+os.environ['SPOTIPY_CLIENT_ID'] = '###'
+os.environ['SPOTIPY_CLIENT_SECRET'] = '###'
+os.environ['SPOTIPY_REDIRECT_URI'] = '###'
 
 #We create our Spotify object
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='f9ac0ad027114dcf97963d2c4d2865d5',
-                                               client_secret='0b5d91bd79a24f1886eaa7c62a21fc8e',
-                                               redirect_uri='https://localhost:8888/callback',
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='###',
+                                               client_secret='###',
+                                               redirect_uri='###',
                                                scope='user-library-read'))
 ```
 
