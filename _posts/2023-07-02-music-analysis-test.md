@@ -9,7 +9,7 @@ tags:
   - Matplotlib
   - Pandas
   - NumPy
-classes: wide
+#classes: wide
 mathjax: true
 toc: true
 toc_sticky: true
