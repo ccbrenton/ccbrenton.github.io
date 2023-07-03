@@ -12,6 +12,7 @@ tags:
 classes: wide
 mathjax: true
 toc: true
+toc_sticky: true
 toc_label: Table of Contents
 ---
 
