@@ -990,7 +990,7 @@ plt.show()
 What we are looking for with a QQ plot is whether the points closely follow the x=y line for the given distribution, but unfortunately it seems none of our audio features are well defined by a normal distribution. We could use this opportunity to determine the best possible distribution model for each individual audio feature with tools such as the `fitter` python library, but for simplicities sake, there is an alternative option we can employ. We can use Chebyshev's inequality.
 
 **Chebyshev's inequality (also called Bienaymé–Chebyshev inequality) states that:**
->"For a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than 1/k2 of the distribution's values can be k or more standard deviations away from the mean" ("Chebyshev's inequality", 2023).
+>"For a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than $\frac{1}{k^2}$ of the distribution's values can be $k$ or more standard deviations away from the mean" ("Chebyshev's inequality", 2023).
 
 $$Pr(|X-\mu|\geq k \sigma) \leq \frac{1}{k^2}$$
 
