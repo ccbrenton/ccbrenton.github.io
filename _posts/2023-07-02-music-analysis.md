@@ -362,19 +362,9 @@ df.head()
 
 Nice! However, we need more data before we can continue with our analysis. Now that we have unique ID's for each individual track in the playlist, we can look-up the associated unique track features per song. We will be pulling different track features that are scored on a scale between 0 - 1. Where a score lies on the scale expresses information about the song. Table 3 below highlights the track features we'll be investigating along with the scale boundaries.
 
-<div align="center">
-  
-| Audio Feature    | Lower Boundary (0)              | Upper Boundary (1)               |
-|------------------|---------------------------------|----------------------------------|
-| **Acousticness**     | low confidence acoustic         | high confidence acoustic         |
-| **Danceability**     | least danceable                 | most danceable                   |
-| **Energy**           | low energy                      | high energy (fast, loud, noisy)  |
-| **Instrumentalness** | not instrumental                | instrumental (no vocals)         |
-| **Liveness**         | not live                        | live (audience present)          |
-| **speechiness**      | low vocal level (no vocals)     | high vocal level (audio book)    |
-| **Valence**          | negative sound (sad, depressed) | positive sound (happy, cheerful) |
 
-</div>
+![png](/assets/images/audio-feature-table.png)
+
 
 <div align="center">
   
