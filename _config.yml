@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Chris Brenton"
   avatar : "/assets/images/profile-2.png"
-  bio    : "Engineer" :arrow_right: "Data Analyst. \n\n Exploring the world with a little curiosity, programming, and data viz."
+  bio    : "Engineer :arrow_right: Data Analyst. \n\n Exploring the world with a little curiosity, programming, and data viz."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
