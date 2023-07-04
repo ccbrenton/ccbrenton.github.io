@@ -375,8 +375,11 @@ Nice! However, we need more data before we can continue with our analysis. Now t
 | **Valence**          | negative sound (sad, depressed) | positive sound (happy, cheerful) |
 
 </div>
+
 <div align="center">
+  
   <p style="text-align: center;"> Table 1. Track Audio Feature Boundaries and Definitions (Spotify, n.d.) </p>
+  
 </div>
 
 Just like we pulled our data from the playlist, we'll look up each unique track ID and pull the track audio features into a new dataframe. Once we have two dataframes with the same unique track ID's (unique primary keys), we can utilize a merge operation to combine the dataframes. In this case, we will conduct an inner join to produce our new dataframe will all the data together. In order to ensure we have a clean merge, let's first clean our primary key's on each dataframe to remove any potential duplicates. Once that is complete we can move forward with the merge. The very last thing to complete the cleaning process is checking for any empty values (set as "DEFAULT" in our program) before we move on to the analysis phase.
