@@ -18,22 +18,22 @@ mathjax: true
 
 There is something so powerful about music. It can makes us laugh or it can make us cry. It can fill us with energy or it can relax us to sleep. It can remind us of the past or inspire us for the future. There are limitless ways to experience music, and that's what makes it so interesting to me. I've always had a true passion for music (my 80,000+ listening minutes on Spotify can attest to that), but it's not always easy to know if others will share the same liked songs. As the guy who loves creating new playlists (and has a giant speaker I bring everywhere I go), it's usually my job to pick the tunes at gatherings. Music is truly subjective when considering what's "good" or "bad", but I often rely on intuition for picking the right songs. While I *think* I do a decent job, I've always asked myself if there's a better way. What if I could use data to find the right songs? Now I could always rely on the experts to tell me what's popular, but what's the fun in that! Let's explore my music to see what insights we can find. 
 
-### Objective:
+## Objective:
     Identify trends in music from a playlist of songs to help identify songs that match the same trends.
 
-### Guiding Questions:
+## Guiding Questions:
     - Is a high popularity important?
     - What trends do we see as songs get older?
     - What trends do we see in technical song characteristics?
     - Do the identified song trends help us develop criteria for future songs?
 
-## Data Overview
+# Data Overview
 
-### About the Data
+## About the Data
 
 For our analysis, we will be using one of my favorite playlists I've created on Spotify called "Suns Out Guns Out" that I tried to make as a catch-all summer playlist for popular songs over the years. The playlist has 730 songs, a total listening time of 42.33 hours, and houses a variety of different genres. 
 
-### Tools for the Job
+## Tools for the Job
 
 **Tools we will need include:**
 - Spotify API
@@ -46,7 +46,7 @@ For our analysis, we will be using one of my favorite playlists I've created on 
     - Scipy
     - Spotipy
     
-In order to access the data, we will need to use Spotify's provided API coupled with Spotipy for Python. This will allow us to pull all the necessary data from any playlist under my account. To conduct the analysis, we will utilize Pandas for our dataframe, Matplotlib and Seaborn for visualizations, and Scipy for statistical analysis. We will start by importing all our libaries and initiating a new token for access through the Spotify API. 
+In order to access the data, we will need to use Spotify's provided API coupled with `spotipy` for Python. This will allow us to pull all the necessary data from any playlist under my account. To conduct the analysis, we will utilize `pandas` for our dataframe, `matplotlib` and `seaborn` for visualizations, and `scipy` for statistical analysis. We will start by importing all our libaries and initiating a new token for access through the Spotify API. 
 
 
 ```python
@@ -76,7 +76,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='###',
                                                scope='user-library-read'))
 ```
 
-## Data Extraction, Cleaning, and Transformation
+# Data Extraction, Cleaning, and Transformation
 
 Now that we have access to our data, we need to pull our data from Spotify into a dataframe before we can start cleaning or transforming. We will then display our dataframe to start learning about our data.
 
@@ -252,7 +252,12 @@ df
 
 We now have a dataframe filled with songs from our playlist! Let's use this opportunity to make some quick observations of our data. We pulled the full 730 songs from our playlist, and there are a number of columns that were generated for each song. We pulled the unique track ID, song title (name), release date, artist, unique artist ID, and popularity score.
 
-What is a popuarity score? Spotify describes it as the following: "The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are." (Spotify for Developers, n.d.) It's also important to highlight that every unique song has it's own calculated popularity score. The same song could have very different scores (ie. explicit vs non-explicit).
+What is a popuarity score? 
+
+**Spotify describes it as the following:** 
+>"The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are" (Spotify for Developers, n.d.).
+
+It's also important to highlight that every unique song has it's own calculated popularity score. The same song could have very different scores (ie. explicit vs non-explicit).
 
 Another observation is the format of our release date column. It is currently in yyyy/mm/dd format, but for our analysis we'll want to see only the the year. We'll create a function to extract just the year from the date, apply it across the entire column, and generate a new column for the year.
 
@@ -357,6 +362,8 @@ df.head()
 
 Nice! However, we need more data before we can continue with our analysis. Now that we have unique ID's for each individual track in the playlist, we can look-up the associated unique track features per song. We will be pulling different track features that are scored on a scale between 0 - 1. Where a score lies on the scale expresses information about the song. Table 3 below highlights the track features we'll be investigating along with the scale boundaries.
 
+<div align="center">
+  
 | Audio Feature    | Lower Boundary (0)              | Upper Boundary (1)               |
 |------------------|---------------------------------|----------------------------------|
 | **Acousticness**     | low confidence acoustic         | high confidence acoustic         |
@@ -367,7 +374,10 @@ Nice! However, we need more data before we can continue with our analysis. Now t
 | **speechiness**      | low vocal level (no vocals)     | high vocal level (audio book)    |
 | **Valence**          | negative sound (sad, depressed) | positive sound (happy, cheerful) |
 
-<p style="text-align: center;"> Table 1. Track Audio Feature Boundaries and Definitions (Spotify, n.d.) </p>
+</div>
+<div align="center">
+  <p style="text-align: center;"> Table 1. Track Audio Feature Boundaries and Definitions (Spotify, n.d.) </p>
+</div>
 
 Just like we pulled our data from the playlist, we'll look up each unique track ID and pull the track audio features into a new dataframe. Once we have two dataframes with the same unique track ID's (unique primary keys), we can utilize a merge operation to combine the dataframes. In this case, we will conduct an inner join to produce our new dataframe will all the data together. In order to ensure we have a clean merge, let's first clean our primary key's on each dataframe to remove any potential duplicates. Once that is complete we can move forward with the merge. The very last thing to complete the cleaning process is checking for any empty values (set as "DEFAULT" in our program) before we move on to the analysis phase.
 
@@ -686,9 +696,9 @@ playlist_df
 
 Great success! We now have a complete dataframe with all the data we need from our playlist. The next step is to conduct our analysis.
 
-## Data Analysis
+# Data Analysis
 
-For our data analysis, let's start with simply getting to know our data. We'll ulitize python's describe function to get statistical information regarding our dataset.
+For our data analysis, let's start with simply getting to know our data. We'll ulitize python's `describe` function to get statistical information regarding our dataset.
 
 
 ```python
@@ -984,17 +994,16 @@ plt.show()
     
 
 
-What we are looking for with a QQ plot is whether the points closely follow the x=y line for the given distribution, but unfortunately it seems none of our audio features are well defined by a normal distribution. We could use this opportunity to determine the best possible distribution model for each individual audio feature with tools such as the fitter python library, but for simplicities sake, there is an alternative option we can employ. We can use Chebyshev's inequality.
+What we are looking for with a QQ plot is whether the points closely follow the x=y line for the given distribution, but unfortunately it seems none of our audio features are well defined by a normal distribution. We could use this opportunity to determine the best possible distribution model for each individual audio feature with tools such as the `fitter` python library, but for simplicities sake, there is an alternative option we can employ. We can use Chebyshev's inequality.
 
 **Chebyshev's inequality (also called Bienaymé–Chebyshev inequality) states that:**
-
-For a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than 1/k2 of the distribution's values can be k or more standard deviations away from the mean ("Chebyshev's inequality", 2023).
+>"For a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than 1/k2 of the distribution's values can be k or more standard deviations away from the mean" ("Chebyshev's inequality", 2023).
 
 $$Pr(|X-\mu|\geq k \sigma) \leq \frac{1}{k^2}$$
 
-In a normal distribution, we could confidently say that 95% of the data would fit within 2 standard deviations from the mean. Using Chebyshev's inequality, we can conclude that 75% of the data will fit within 2 standard deviations of the mean for a wide range of different distributions. Using these bounds does not give us the same level of accuracy we can expect with a normal distribution, but it does allow us to better identify values in our data which would correlate to a song better fitting our playlist.
+In a normal distribution, we could confidently say that 95% of the data would fit within 2 standard deviations from the mean. Using Chebyshev's inequality, we can conclude that at least 75% of the data will fit within 2 standard deviations of the mean for a wide range of different distributions. Using these bounds does not give us the same level of accuracy we can expect with a normal distribution, but it does allow us to better identify values in our data which would correlate to a song better fitting our playlist.
 
-## Putting the Data into Action
+# Putting the Data into Action
 
 Now that we've identified the general characteristics of our playlist data, we can use this information to help us predict which songs may fit better into our playlist. We will use a range of values 2 standard deviations from the mean for each audio feature to help us develop a filter for the type of songs we want. We will upload a new dataframe of over 6,000 songs (my liked songs on Spotify) to identify which would best fit our new criteria.
 
@@ -1408,31 +1417,30 @@ The last thing we'll do is export the potential songs out to an excel sheet and 
 unique_tracks_df.to_excel('new_tracks.xlsx',index=False)
 ```
 
-## Conclusion
+# Conclusion
 
-### Summary
+## Summary
 
-Based on our analysis of the playlist "Suns Out Guns Out", we can conclude the following about the playlist:
-- Songs increase in quantity as release year increases
-- Songs tend to be more popular, but a large number of songs appear closer to a score of 0 
-- Songs are generally danceable
-- Songs are generally fast, loud, and noisy
-- Songs are not live
-- Songs are vocal enough to not be instrumental
-- Songs are not vocal enough to be considered an audio book or podcast
-- The playlist is a fairly even mix of positive and negative sounding songs with a slight positive bias
-- Distributions of the audio features do not follow a normal distribution, thus we can conclude at least 75% of data points are within 2 standard deviations from the mean (Chebyshev's Inequality)
-- We can use Chebyshev's Inequality to narrow down compatible songs for our playlist
+**Based on our analysis of the playlist "Suns Out Guns Out", we can conclude the following about the playlist:**
+  - Songs increase in quantity as release year increases
+  - Songs tend to be more popular, but a large number of songs appear closer to a score of 0 
+  - Songs are generally danceable
+  - Songs are generally fast, loud, and noisy
+  - Songs are not live
+  - Songs are vocal enough to not be instrumental
+  - Songs are not vocal enough to be considered an audio book or podcast
+  - The playlist is a fairly even mix of positive and negative sounding songs with a slight positive bias
+  - Distributions of the audio features do not follow a normal distribution, thus we can conclude at least 75% of data points are within 2 standard deviations from the mean (Chebyshev's Inequality)
+  - We can use Chebyshev's Inequality to narrow down compatible songs for our playlist
 
 
-### Next Steps
+## Next Steps
+  - Analysis on songs with lower popularity scores within the "Suns Out Guns Out" playlist to determine cause
+  - Train and deploy a machine learning model for advanced recommendations on songs
+  - Compare audio features between our chosen playlist and that of a different type of playlist (ex: studying/relaxation playlist)
+  - Identify trends in type of genres that fit with my playlist's audio features
 
-- Analysis on songs with lower popularity scores within the "Suns Out Guns Out" playlist to determine cause
-- Train and deploy a machine learning model for advanced recommendations on songs
-- Compare audio features between our chosen playlist and that of a different type of playlist (ex: studying/relaxation playlist)
-- Identify trends in type of genres that fit with my playlist's audio features
-
-## Reference List
+# Reference List
 
 Spotify (n.d.). *Get Track's Audio Features*. Spotify for Developers. https://developer.spotify.com/documentation/web-api/reference/get-audio-features
 
