@@ -16,14 +16,14 @@ mathjax: true
 #toc_label: Table of Contents
 ---
 
-There is something so powerful about music. It can makes us laugh or it can make us cry. It can fill us with energy or it can relax us to sleep. It can remind us of the past or inspire us for the future. There are limitless ways to experience music, and that's what makes it so interesting to me. I've always had a true passion for music (my 80,000+ listening minutes on Spotify can attest to that), but it's not always easy to know if others will share the same liked songs. As the guy who loves creating new playlists (and has a giant speaker I bring everywhere I go), it's usually my job to pick the tunes at gatherings. Music is truly subjective when considering what's "good" or "bad", but I often rely on intuition for picking the right songs. While I *think* I do a decent job, I've always asked myself if there's a better way. What if I could use data to find the right songs? Now I could always rely on the experts to tell me what's popular, but what's the fun in that! Let's explore my music to see what insights we can find. 
+There is something so powerful about music. It can makes us laugh or it can make us cry. It can fill us with energy or it can relax us to sleep. It can remind us of the past or inspire us for the future. There are limitless ways to experience music, and that's what makes it so interesting to me. I've always had a huge passion for music (my 80,000+ listening minutes last year on Spotify can attest to that), but it's not always easy to know if others will share the same liked songs. As the guy who loves creating new playlists (and has a massive boombox I bring everywhere I go), it's usually my job to pick the tunes at gatherings. Music is truly subjective when considering what's "good" or "bad", but I often rely on intuition for picking the right songs. While I *think* I do a decent job, I've always asked myself if there's a better way. What if I could use data to find the right songs? Now I could always rely on the experts to tell me what's popular, but what's the fun in that! Let's explore my music to see what insights we can find. 
 
 ## Objective:
-    Identify trends in music from a playlist of songs to help identify songs that match the same trends.
+    Identify trends in songs from a preferred music playlist to help identify songs that match the same trends.
 
 ## Guiding Questions:
     - Is a high popularity important?
-    - What trends do we see as songs get older?
+    - What trends do we see as songs get older in our dataset?
     - What trends do we see in technical song characteristics?
     - Do the identified song trends help us develop criteria for future songs?
 
@@ -250,16 +250,16 @@ df
 
 
 
-We now have a dataframe filled with songs from our playlist! Let's use this opportunity to make some quick observations of our data. We pulled the full 730 songs from our playlist, and there are a number of columns that were generated for each song. We pulled the unique track ID, song title (name), release date, artist, unique artist ID, and popularity score.
+We now have a dataframe filled with songs from our playlist! Let's use this opportunity to make some quick observations from our data. We pulled the full 730 songs from our playlist, and there are a number of columns that were generated for each song. We pulled the unique track ID, song title (name), release date, artist, unique artist ID, and popularity score.
 
 What is a popuarity score? 
 
 **Spotify describes it as the following:** 
 >"The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are" (Spotify for Developers, n.d.).
 
-It's also important to highlight that every unique song has it's own calculated popularity score. The same song could have very different scores (ie. explicit vs non-explicit).
+It's also important to highlight that every unique song has it's own calculated popularity score. The same song could have very different scores (e.g., explicit vs non-explicit).
 
-Another observation is the format of our release date column. It is currently in yyyy/mm/dd format, but for our analysis we'll want to see only the the year. We'll create a function to extract just the year from the date, apply it across the entire column, and generate a new column for the year.
+Another observation we can note is the current format of our release date column. It is currently in yyyy/mm/dd format, but for our analysis we'll want to see only the year. We'll create a function to extract just the year from the date, apply it across the entire column, and generate a new column for the year.
 
 
 ```python
@@ -360,7 +360,7 @@ df.head()
 
 
 
-Nice! However, we need more data before we can continue with our analysis. Now that we have unique ID's for each individual track in the playlist, we can look-up the associated unique track features per song. We will be pulling different track features that are scored on a scale between 0 - 1. Where a score lies on the scale expresses information about the song. Table 3 below highlights the track features we'll be investigating along with the scale boundaries.
+Nice! However, we need more data before we can continue with our analysis. Now that we have unique ID's for each individual track in the playlist, we can look up the associated unique track audio features per song. We will be pulling different audio features that are scored on a scale between 0 - 1. Where a score lies on the scale expresses information about the song. Table 1 below highlights the audio features we'll be investigating along with the scale boundaries.
 
 
 ![png](/assets/images/audio-feature-table.png)
@@ -372,7 +372,7 @@ Nice! However, we need more data before we can continue with our analysis. Now t
   
 </div>
 
-Just like we pulled our data from the playlist, we'll look up each unique track ID and pull the track audio features into a new dataframe. Once we have two dataframes with the same unique track ID's (unique primary keys), we can utilize a merge operation to combine the dataframes. In this case, we will conduct an inner join to produce our new dataframe will all the data together. In order to ensure we have a clean merge, let's first clean our primary key's on each dataframe to remove any potential duplicates. Once that is complete we can move forward with the merge. The very last thing to complete the cleaning process is checking for any empty values (set as "DEFAULT" in our program) before we move on to the analysis phase.
+Just like we pulled our data from the playlist, we'll look up each unique track ID and pull the track audio features into a new dataframe. Once we have two dataframes with the same unique track ID's (unique primary keys), we can utilize a merge operation to combine the dataframes. In this case, we will conduct an inner join to produce our new dataframe with all the data together. In order to ensure we have a clean merge, let's first clean our primary key's on each dataframe to remove any potential duplicates. Once that is complete we can move forward with the merge. The very last thing to complete the cleaning process is checking for any empty values (set as "DEFAULT" in our script) before we move on to the analysis phase.
 
 
 ```python
@@ -687,7 +687,7 @@ playlist_df
 
 
 
-Great success! We now have a complete dataframe with all the data we need from our playlist. The next step is to conduct our analysis.
+We now have a complete dataframe with all the data we need from our playlist! The next step is to conduct our analysis.
 
 # Data Analysis
 
@@ -874,7 +874,7 @@ plt.show()
     
 
 
-Woah, that's a lot of songs with a popularity score close to 0! It's important to consider that popularity scores are derived from a spotify algorithm that considers the number of times a song is played and how recent those plays are (Spotify, n.d.). It's also important to consider that every song on spotify is ranked independently, so duplicates of the same song can have different scores. One version of the song on Spotify could have a signifcantly different score compared to another version (ex: explicit vs non-explicit). It's possible that the songs ranked at 0 in the playlist are a mix of songs I like that aren't popular and songs that are not from the original album. Further analysis is required. Looking at the rest of the popularity data shows generally the songs in the playlist tend toward a high popularity.
+That's a lot of songs with a popularity score close to 0! It's important to consider that popularity scores are derived from a spotify algorithm that considers the number of times a song is played and how recent those plays are (Spotify, n.d.). It's also important to consider that every song on spotify is ranked independently, so duplicates of the same song can have different scores. One version of the song on Spotify could have a signifcantly different score compared to another version (e.g., explicit vs non-explicit). It's possible that the songs ranked at 0 in the playlist are a mix of songs I like that aren't popular and songs that are not from the original album. Further analysis would be required to determine the maximum popularity of a given song from that subset of data. Looking at the rest of the popularity data shows generally the songs in the playlist tend toward a high popularity.
 
 Looking at the release years show an expotential trend of increasing track counts as the year increases. There are a handful of songs that are added from 1968 to around the mid 1990's, but the quantity quickly increases afterwards. This data shows that the songs in the playlist tend toward more modern songs.
 
@@ -953,11 +953,11 @@ plt.show()
     
 
 
-Investigating our the strip plot first shows the overall density of points across the classification score scale from 0 to 1. An alpha value (translucency) of 0.3 was used to better highlight overlapping values. The audio features have been sorted in descending order from smallest mean to largest mean for the dataset. Reviewing our strip plot and coorelating back to Table 1 helps us visualize the general concentration of points thus the general characteristics of our playlist. We see a very low instrumentalness, speechiness, acousticness, and liveness. We also see a relatively high danceability and energy. This suggests that the playlist has a lot of songs that are danceable; are fast, loud, and noisy; are not live recordings; and have enough vocals to not be instrumental while also not being a podcast or audio book. Valence is fairly evenly distributed suggesting that the playlist has a mix of positive and negative sounding songs. We also notice that there are many potential outliers in the data, but a strip plot doesn't give us a lot of descriptive information. That's where a boxen plot comes in.
+Investigating our the strip plot first shows the overall density of points across the classification score scale from 0 to 1. An alpha value (translucency) of 0.3 was used to better highlight overlapping values. The audio features have been sorted in descending order from smallest mean to largest mean for the dataset. Reviewing our strip plot and correlating back to Table 1 helps us visualize the general concentration of points thus the general characteristics of our playlist. We see a very low instrumentalness, speechiness, acousticness, and liveness. We also see a relatively high danceability and energy. This suggests that the playlist has a lot of songs that are danceable; are fast, loud, and noisy; are not live recordings; and have enough vocals to not be instrumental while also not being a podcast or audio book. Valence is fairly evenly distributed suggesting that the playlist has a mix of positive and negative sounding songs. We also notice that there are many potential outliers in the data, but a strip plot doesn't give us a lot of descriptive information. That's where a boxen plot comes in.
 
-The second plot is a boxen plot (letter-value plot) that gives us a bit more information on the data distribution. The largest two boxes in the middle represent 50% of the data. The next two boxes (one on each side) together represent another 25% of the data. Each series of boxes cuts the percentage in half from the previous (12.5%, 6.25%, etc). The boxen plot helps us confirm where the largest concentrations of data points are as well as the outliers in our data (represented by the black diamonds). We see that the majority of our data is fairly concentrated for each audio feature, but there are significant tails present as well as outliers for each audio feature.
+The second plot is a boxen plot (letter-value plot) that gives us a bit more information on the data distribution. The largest two boxes in the middle represent 50% of the data. The next two boxes (one on each side) together represent another 25% of the data. Each series of boxes cuts the percentage in half from the previous (12.5%, 6.25%, etc.). The boxen plot helps us confirm where the largest concentrations of data points are as well as the outliers in our data (represented by the black diamonds). We see that the majority of our data is fairly concentrated for each audio feature, but there are significant tails present as well as outliers for each audio feature.
 
-How can we use this data to help us decide which songs would be a good or bad fit for our playlist? Ideally, we want to take a mathematical approach to guarantee the best possible accuracy in our predictions. The first observation we want to make in our quest for picking the best mathematical solution is to determine if we are dealing with a normal distribution or not. Normal distributions can help make our lives a lot easier, but unfortunately our boxen plot helps us visualize that our data may not fit a normal distribution too well. Let's double check by utilizing a more specific tool called a QQ plot. While this won't tell us what the distribution is, it can tell us what it's NOT. Let's plot our data on the QQ plot to determine if we have a normal distribution.
+Can we use this data to help us decide which songs would be a good or bad fit for our playlist? Ideally, we want to take a mathematical approach to guarantee the best possible accuracy in our predictions. The first observation we want to make in our quest for picking the best mathematical solution is to determine if we are dealing with a normal distribution or not. Normal distributions can help make our lives a lot easier, but unfortunately our boxen plot helps us visualize that our data may not fit a normal distribution too well. Let's double check by utilizing a more specific tool called a QQ plot. While this won't tell us what the distribution is, it can tell us what it's NOT. Let's plot our data on the QQ plot to determine if we have a normal distribution.
 
 
 ```python
@@ -987,7 +987,7 @@ plt.show()
     
 
 
-What we are looking for with a QQ plot is whether the points closely follow the x=y line for the given distribution, but unfortunately it seems none of our audio features are well defined by a normal distribution. We could use this opportunity to determine the best possible distribution model for each individual audio feature with tools such as the `fitter` python library, but for simplicities sake, there is an alternative option we can employ. We can use Chebyshev's inequality.
+What we are looking for with a QQ plot is whether the points closely follow the x=y line for the given distribution, but unfortunately it seems none of our audio features are well defined by a normal distribution. We could use this opportunity to determine the best possible distribution model for each individual audio feature with tools such as the `fitter` python library, but for simplicity's sake, there is an alternative option we can employ. We can use Chebyshev's inequality.
 
 **Chebyshev's inequality (also called Bienaymé–Chebyshev inequality) states that:**
 >"For a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than $\frac{1}{k^2}$ of the distribution's values can be $k$ or more standard deviations away from the mean" ("Chebyshev's inequality", 2023).
@@ -998,7 +998,7 @@ In a normal distribution, we could confidently say that 95% of the data would fi
 
 # Putting the Data into Action
 
-Now that we've identified the general characteristics of our playlist data, we can use this information to help us predict which songs may fit better into our playlist. We will use a range of values 2 standard deviations from the mean for each audio feature to help us develop a filter for the type of songs we want. We will upload a new dataframe of over 6,000 songs (my liked songs on Spotify) to identify which would best fit our new criteria.
+Now that we've identified the general characteristics of our playlist data, we can use this information to help us predict which songs may fit better into our playlist. We will use a range of values 2 standard deviations from the mean for each audio feature to help us develop a filter for the type of songs we want. We will upload a new dataset of over 6,000 songs (my liked songs on Spotify) to identify which would best fit our new criteria.
 
 For our analysis, we will start by calculating the upper and lower bounds of our target values based on 2 standard deviations from the mean.
 
@@ -1366,7 +1366,7 @@ merged_df
 
 
 
-We can see that we successfully pulled 6125 songs into our dataframe. Now, we'll finally update the type of our columns and create a new dataframe by applying a filter for only tracks that meet our criteria. After the filter is applied, we need to make sure we only include unique songs in this new dataframe that don't already exist in our playlist. We'll do this by merging our playlist dataframe to our new tracks dataframe and use an indicator to find when a vaue exists in both dataframes. We'll build a new dataframe to only include values that are not present in both the previous dataframes.
+We can see that we successfully pulled 6125 songs into our dataframe. Now, we'll finally update the type of our columns and create a new dataframe by applying a filter for only tracks that meet our criteria. After the filter is applied, we need to make sure we only include unique songs in this new dataframe that don't already exist in our playlist. We'll do this by merging our playlist dataframe to our new tracks dataframe and use an indicator to find when a value exists in both dataframes. We'll build a new dataframe to only include values that are not present in both the previous dataframes.
 
 
 ```python
@@ -1416,24 +1416,24 @@ unique_tracks_df.to_excel('new_tracks.xlsx',index=False)
 
 **Based on our analysis of the playlist "Suns Out Guns Out", we can conclude the following about the playlist:**
   - Songs increase in quantity as release year increases
-  - Songs tend to be more popular, but a large number of songs appear closer to a score of 0 
+  - Songs tend to be more popular, but a significant number of songs appear closer to a score of 0 
   - Songs are generally danceable
   - Songs are generally fast, loud, and noisy
   - Songs are not live
   - Songs are vocal enough to not be instrumental
   - Songs are not vocal enough to be considered an audio book or podcast
   - The playlist is a fairly even mix of positive and negative sounding songs with a slight positive bias
-  - Distributions of the audio features do not follow a normal distribution, thus we can conclude at least 75% of data points are within 2 standard deviations from the mean (Chebyshev's Inequality)
-  - We can use Chebyshev's Inequality to narrow down compatible songs for our playlist
+  - Distributions of the audio features do not follow a normal distribution, thus we can conclude at least 75% of data points are within 2 standard deviations from the mean (Chebyshev's inequality)
+  - We can use Chebyshev's inequality to narrow down compatible songs for our playlist
 
 
 ## Next Steps
   - Analysis on songs with lower popularity scores within the "Suns Out Guns Out" playlist to determine cause
   - Train and deploy a machine learning model for advanced recommendations on songs
-  - Compare audio features between our chosen playlist and that of a different type of playlist (ex: studying/relaxation playlist)
-  - Identify trends in type of genres that fit with my playlist's audio features
+  - Compare audio features between our chosen playlist and that of a different type of playlist (e.g., studying/relaxation playlist)
+  - Identify trends in the types of genres that fit with my playlist's audio features
 
-# Reference List
+# References
 
 Spotify (n.d.). *Get Track's Audio Features*. Spotify for Developers. https://developer.spotify.com/documentation/web-api/reference/get-audio-features
 
