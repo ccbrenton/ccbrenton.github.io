@@ -389,15 +389,7 @@ Nice! However, we need more data before we can continue with the analysis. Now t
 
 *Track Audio Feature Boundaries and Definitions*
 
-| Audio Feature    | Lower Boundary (0)              | Upper Boundary (1)               |
-|------------------|---------------------------------|----------------------------------|
-| **Acousticness**     | low confidence acoustic         | high confidence acoustic         |
-| **Danceability**     | least danceable                 | most danceable                   |
-| **Energy**           | low energy                      | high energy (fast, loud, noisy)  |
-| **Instrumentalness** | not instrumental                | instrumental (no vocals)         |
-| **Liveness**         | not live                        | live (audience present)          |
-| **speechiness**      | low vocal level (no vocals)     | high vocal level (audio book)    |
-| **Valence**          | negative sound (sad, depressed) | positive sound (happy, cheerful) |
+![png](/assets/images/audio-feature-table.png)
 
 *Note.* This table illustrates upper and lower boundary examples for specific track audio features where a score of 0 represents the lower boundary and a score of 1 represents the upper boundary. Adapted from *Get Track's Audio Features*, by Spotify (n.d. -b). Copyright 2023 by Spotify AB. 
 
@@ -900,7 +892,7 @@ plt.show()
 
 
     
-![png](output_32_0.png)
+![png](/assets/images/output_32_0.png)
     
 
 
@@ -979,7 +971,7 @@ plt.show()
 
 
     
-![png](output_36_0.png)
+![png](/assets/images/output_36_0.png)
     
 
 
@@ -1013,7 +1005,7 @@ plt.show()
 
 
     
-![png](output_38_0.png)
+![png](/assets/images/output_38_0.png)
     
 
 
