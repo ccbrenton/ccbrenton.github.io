@@ -82,12 +82,6 @@ HTML('<style>{}</style>'.format(table_css))
 
 
 
-```python
-client_ID = 'f9ac0ad027114dcf97963d2c4d2865d5'
-client_secret = '0b5d91bd79a24f1886eaa7c62a21fc8e'
-redirect_uri = 'https://localhost:8888/callback'
-```
-
 
 ```python
 #This sets the environmental variables during this session. Token strings are hidden for confidentiality.
