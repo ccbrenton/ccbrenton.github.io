@@ -68,7 +68,7 @@ author:
       url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
     - label: "Resume"
       icon: "fab fa-fw fa-link"
-      url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
+      url: "/documents/Christopher Brenton Resume.pdf"
       
 footer:
   links:
@@ -80,7 +80,7 @@ footer:
       url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
     - label: "Resume"
       icon: "fab fa-fw fa-link"
-      url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
+      url: "/documents/Christopher Brenton Resume.pdf"
       
 defaults:
   # _posts
