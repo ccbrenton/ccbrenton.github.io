@@ -66,7 +66,10 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
-
+    - label: "Resume"
+      icon: "fab fa-fw fa-link"
+      url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
+      
 footer:
   links:
     - label: "GitHub"
@@ -75,7 +78,10 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
-
+    - label: "Resume"
+      icon: "fab fa-fw fa-link"
+      url: "https://www.linkedin.com/in/christopher-brenton-684901118/"
+      
 defaults:
   # _posts
   - scope:
