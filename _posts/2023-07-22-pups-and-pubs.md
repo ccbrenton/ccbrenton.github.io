@@ -16,8 +16,7 @@ mathjax: true
 #toc_label: Table of Contents
 ---
 
-
-![IMG_0182.jpeg](attachment:ab16bb71-74b8-4b86-b4c1-e7bd1976f70c.jpeg) 
+![jpeg](/assets/images/IMG_0182.jpeg)
 
 *Image: Cassie at Hazel Park High School tennis courts. Credit: Emma Weintraub*
 
