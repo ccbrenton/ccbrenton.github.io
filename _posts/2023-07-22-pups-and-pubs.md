@@ -918,7 +918,7 @@ Let's say that we are visiting my home town (Midland, MI), could we find out wha
 
 **The equation (1) is defined as:**
 
->$$Distance = 3963 * arccos((sin(latitude_1) * sin(latitude_2)) + cos(latitude_1) * cos(latitude_2) * cos(longitude_2 - longitude_1))$$
+$$Distance = 3963 * arccos((sin(latitude_1) * sin(latitude_2)) + cos(latitude_1) * cos(latitude_2) * cos(longitude_2 - longitude_1))$$
 
 
 
