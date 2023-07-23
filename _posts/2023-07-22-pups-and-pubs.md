@@ -1,4 +1,21 @@
-# Pups and Pubs - Brewery Analysis With SQL, Python, and Tableau
+---
+title: "Pups and Pubs - Brewery Analysis With SQL, Python, and Tableau"
+date: 2023-07-22
+categories:
+  - Project
+tags:
+  - SQL
+  - Tableau
+  - Python
+  - Pandas
+  - BeautifulSoup
+classes: wide
+mathjax: true
+#toc: true
+#toc_sticky: true
+#toc_label: Table of Contents
+---
+
 
 ![IMG_0182.jpeg](attachment:ab16bb71-74b8-4b86-b4c1-e7bd1976f70c.jpeg) 
 
