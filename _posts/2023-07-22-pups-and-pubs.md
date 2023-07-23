@@ -3274,7 +3274,7 @@ ORDER BY mich_brew.name
 
 
 
-<iframe src="https://public.tableau.com/views/DogFriendlyMichiganBreweries/Dog-FriendlyBreweriesinMichigan?:language=en-US&:display_count=n&:origin=viz_share_link&:showVizHome=no&:embed=true" ></iframe>
+<iframe seamless frameborder="0" src="https://public.tableau.com/views/DogFriendlyMichiganBreweries/Dog-FriendlyBreweriesinMichigan?:language=en-US&:display_count=n&:origin=viz_share_link&:showVizHome=no&:embed=true" width = '1200' height = '600' ></iframe>
 
 
 # References
