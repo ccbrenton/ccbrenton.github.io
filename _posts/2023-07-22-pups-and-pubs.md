@@ -27,6 +27,7 @@ For the jupyter notebook export, click [here.](/documents/pups_and_pubs/Pups and
   <figcaption>Image: Cassie at Hazel Park High School tennis courts. Credit: Emma Weintraub</figcaption>
 </figure>
 
+We'll begin by investigating the database provided by Open Brewery DB. It includes a rich community-driven free dataset of breweries globally. We will populate this data into a new table `breweries` with columns as highlighted below:
 
 #### `breweries`
 
@@ -47,7 +48,7 @@ For the jupyter notebook export, click [here.](/documents/pups_and_pubs/Pups and
 | `longitude`          | numeric      | longitude coordinates |
 | `latitude`           | numeric      | latitude coordinates |
 
-We'll start by using python libraries `pandas`, `psycopg2`, and `sqlalchemy` to retrieve our breweries data from Open Brewery DB's GitHub repository (3).
+We'll use python libraries `pandas`, `psycopg2`, and `sqlalchemy` to retrieve our breweries data from Open Brewery DB's GitHub repository (3) and populate our new `breweries` table.
 
 
 ```python
@@ -77,7 +78,7 @@ df.to_sql('breweries',con=engine, if_exists='replace')
 
 
 
-Let's begin by getting a sample of 5 breweries from our database to make sure the data was successfully loaded. We'll then observe the samples to get an idea of what our data looks like.
+Let's begin by getting a sample of 5 breweries from our `breweries` table to make sure the data was successfully loaded. We'll then observe the samples to get an idea of what our data looks like.
 
 
 ```sql
