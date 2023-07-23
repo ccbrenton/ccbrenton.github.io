@@ -1,27 +1,11 @@
-# Minimal Mistakes remote theme starter
+# Hello, and welcome to my portfolio! 👋
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
 
-Contains basic configuration to get you a site with:
+Click [here](https://ccbrenton.github.io) to access my website with all my projects available.
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+## My completed projects include:
+- #### [Pups and Pubs - Brewery Analysis With SQL, Python, and Tableau]([https://ccbrenton.github.io](https://ccbrenton.github.io/project/pups-and-pubs/)) 
+  - In this project, we explore a database full of brewery data to see what insights we can extract. At the end, we introduce a second data source to help us locate dog-friendly breweries in Michigan. We finish the project by building an interactive map of our dog-friendly breweries.
+- #### [DJ With Data - Spotify Music Analysis in Python]([https://ccbrenton.github.io](https://ccbrenton.github.io/project/pups-and-pubs/)](https://ccbrenton.github.io/project/dj-with-data/)) 
+  - In this project, we identify music trends from a music playlist to help identify songs that match the same trends. We utilize a variety of python libraries and Chebyshev's inequality to complete this task.
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
-
----
-
-## Troubleshooting
-
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
-
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
