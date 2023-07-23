@@ -18,6 +18,10 @@ mathjax: true
 
 Name a better combo than dogs, sunny weather, and a cold beverage. That's the goal whenever I'm eager to try out a new brewery with my friends and family. Our dog Cassie loves to come on trips with us, and exploring new breweries is no exception. In Michigan, it's an easy task finding something new to try as breweries have rapidly opened up in the Great Lakes State. While there's never a shortage of breweries to experience, finding dog-friendly breweries is not always as simple. In this project, we'll explore a database full of brewery data to see what insights we can extract. At the end, we'll introduce a second data source to help us locate dog-friendly breweries in Michigan. We'll finish the project by building an interactive map of our dog-friendly breweries.
 
+For a html export, click [here.](/documents/pups_and_pubs/Pups and Pubs - Brewery Analysis With SQL, Python, and Tableau.html)
+
+For the jupyter notebook export, click [here.](/documents/pups_and_pubs/Pups and Pubs - Brewery Analysis With SQL, Python, and Tableau.ipynb)
+
 <figure>
   <img src="/assets/images/IMG_0182.jpeg">
   <figcaption>Image: Cassie at Hazel Park High School tennis courts. Credit: Emma Weintraub</figcaption>
